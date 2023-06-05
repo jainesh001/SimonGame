@@ -29,12 +29,12 @@ function nextSequence(){
     $("h1").text(lValue);
    return buttonColors[rColor];
 }
-
 function checkAnswer(currentlevel){
     var result=true;
     for(var j=0;j<gamePattern.length;j++){
         if(gamePattern[j]===userClickedPattern[j]){
         }else{
+
             result=false;   
         }
     }  
@@ -42,13 +42,11 @@ function checkAnswer(currentlevel){
     console.log("userPattern "+userClickedPattern);
     console.log(result);
     if(!result){
-        setTimeout(function(){
-              var wrongAudio=new Audio("sounds/wrong.mp3");
-              wrongAudio.play();
-        },2010);
+        // var wrongAudio=new Audio("./sounds/wrong.mp3");
+        // wrongAudio.play();
+        play("wrong");
     
         showEffect("notclass","body","game-over",200);
-
         $("h1").text("Game Over, Press Any Key to Restart");
         reset();
     }
@@ -78,6 +76,7 @@ function start(){
 
 
 function play(typeOfEvent){
+  
     switch(typeOfEvent){
         case "red":
             var red=new Audio("sounds/red.mp3");
@@ -94,6 +93,10 @@ function play(typeOfEvent){
         case "yellow":
             var yellow=new Audio("sounds/yellow.mp3");
             yellow.play();
+            break;
+        case "wrong":
+            var wrong=new Audio("sounds/wrong.mp3");
+            wrong.play();
             break;
         default:   
             console.log(typeOfEvent+" error") ;           
