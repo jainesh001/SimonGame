@@ -42,6 +42,8 @@ function checkAnswer(currentlevel){
     console.log("userPattern "+userClickedPattern);
     console.log(result);
     if(!result){
+        var wrongAudio=new Audio("sounds/wrong.mp3");
+        wrongAudio.play();
         showEffect("notclass","body","game-over",200);
         $("h1").text("Game Over, Press Any Key to Restart");
         reset();
@@ -78,15 +80,15 @@ function play(typeOfEvent){
             red.play();
             break;
         case "blue":
-            var blue=new Audio("./sounds/blue.mp3");
+            var blue=new Audio("sounds/blue.mp3");
             blue.play();
             break;
         case "green":
-            var green=new Audio("./sounds/green.mp3");
+            var green=new Audio("sounds/green.mp3");
             green.play();
             break;
         case "yellow":
-            var yellow=new Audio("./sounds/yellow.mp3");
+            var yellow=new Audio("sounds/yellow.mp3");
             yellow.play();
             break;
         default:   
