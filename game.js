@@ -74,7 +74,7 @@ function start(){
 function play(typeOfEvent){
     switch(typeOfEvent){
         case "red":
-            var red=new Audio("./sounds/red.mp3");
+            var red=new Audio("sounds/red.mp3");
             red.play();
             break;
         case "blue":
