@@ -42,10 +42,12 @@ function checkAnswer(currentlevel){
     console.log("userPattern "+userClickedPattern);
     console.log(result);
     if(!result){
-        var wrongAudio=new Audio("sounds/wrong.mp3");
-        wrongAudio.play();
+        setTimeout(function(){
+              var wrongAudio=new Audio("sounds/wrong.mp3");
+              wrongAudio.play();
+        },2010);
+    
         showEffect("notclass","body","game-over",200);
-        wrongAudio.play();
 
         $("h1").text("Game Over, Press Any Key to Restart");
         reset();
