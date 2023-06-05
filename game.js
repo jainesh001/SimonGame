@@ -46,8 +46,7 @@ function checkAnswer(currentlevel){
         // wrongAudio.play();
         play("wrong");
     
-        showEffect("notclass","body","game-over",200);
-        $("h1").text("Game Over, Press Any Key to Restart");
+       
         reset();
     }
     if(result){
@@ -97,6 +96,8 @@ function play(typeOfEvent){
         case "wrong":
             var wrong=new Audio("sounds/wrong.mp3");
             wrong.play();
+            showEffect("notclass","body","game-over",200);
+            $("h1").text("Game Over, Press Any Key to Restart");
             break;
         default:   
             console.log(typeOfEvent+" error") ;           
