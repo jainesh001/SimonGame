@@ -45,6 +45,8 @@ function checkAnswer(currentlevel){
         var wrongAudio=new Audio("sounds/wrong.mp3");
         wrongAudio.play();
         showEffect("notclass","body","game-over",200);
+        wrongAudio.play();
+
         $("h1").text("Game Over, Press Any Key to Restart");
         reset();
     }
